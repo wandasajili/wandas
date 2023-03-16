@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>UTS JAVASCRIPT</title>
+</head>
+
+<body>
+
+    <script>
+
+        class Siswa {
+
+            constructor(nama, kelas, jurusan, alamat) {
+                this.nama = nama;
+                this.kelas = kelas;
+                this.jurusan = jurusan;
+                this.alamat = alamat;
+                this.nilai = [];
+            }
+
+            tambahNilai(mataPelajaran, nilai) {
+                this.nilai.push({ mataPelajaran, nilai });
+                console.log(`Nilai ${mataPelajaran} anda adalah ${nilai}`);
+            }
+
+            hitungRataRata() {
+                let totalNilai = 0;
+                for (let i = 0; i < this.nilai.length; i++) {
+                    totalNilai += this.nilai[i].nilai;
+                }
+                const rataRata = totalNilai / this.nilai.length;
+                console.log(`Rata-rata nilai anda adalah ${rataRata.toFixed(2)}`);
+            }
+
+            tampilkanInfoSiswa() {
+                console.log(`Nama: ${this.nama}`);
+                console.log(`Kelas: ${this.kelas}`);
+                console.log(`Jurusan: ${this.jurusan}`);
+                console.log(`Alamat: ${this.alamat}`);
+            }
+
+        }
+
+        const siswa1 = new Siswa("Agus", "XII IPA 1", "IPA", "Jalan Kenanga No. 123");
+        siswa1.tambahNilai("Matematika", 85);
+        siswa1.tambahNilai("Fisika", 90);
+        siswa1.hitungRataRata();
+        siswa1.tampilkanInfoSiswa();
+    </script>
+<script src="indexx.js"></script>
+</body>
+
+</html>
